@@ -41,7 +41,11 @@ code {
   box-sizing: border-box;
   border-radius: 4px;
   margin-top: 20px;
-  background: #241d4c;
+  background: #251c3f;
+  transition: ease-in-out 0.15s;
+}
+.post-wrapper:hover {
+  background-color: #241d4c;
 }
 .post-header {
   padding: 10px 10px;
@@ -108,4 +112,30 @@ code {
 }
 .post-actions div span {
   margin-left: 7px;
+}
+.pagination {
+  position: relative;
+  width: 100px;
+  height: 40px;
+  top: 10px;
+  left: 1130px;
+}
+.pagination-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.pagination-container:hover {
+  cursor: pointer;
+}
+.pagination-cell {
+  border: 2px solid black;
+  width: 100%;
+  text-align: center;
+  background-color: rgb(255, 143, 53);
+  transition: ease-in-out 0.25s;
+}
+.pagination-cell:hover {
+  background-color: rgb(255, 102, 0);
 }

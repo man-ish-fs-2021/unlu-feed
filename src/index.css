@@ -71,7 +71,7 @@ code {
   font-weight: normal;
   font-size: 14px;
   line-height: 19px;
-  color: #ff8f35;
+  color: rgb(206, 117, 45);
 }
 .container {
   position: relative;
@@ -113,6 +113,7 @@ code {
 .post-actions div span {
   margin-left: 7px;
 }
+/* pagination */
 .pagination {
   position: relative;
   width: 100px;
@@ -133,9 +134,35 @@ code {
   border: 2px solid black;
   width: 100%;
   text-align: center;
-  background-color: rgb(255, 143, 53);
+  background-color: rgb(206, 117, 45);
   transition: ease-in-out 0.25s;
 }
 .pagination-cell:hover {
+  background-color: rgb(255, 102, 0);
+}
+/* sort */
+.sort-wrapper{
+  top: 20px;
+  left: 651.8px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width:250px;
+  height: 30px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #191034;
+  color: black;
+  padding: 10px;
+}
+.sort-cell{
+  padding: 5px;
+  background-color:rgb(206, 117, 45) ;
+  border: 1px solid white;
+  border-radius: 10px;
+  transition: ease-in-out .25s;
+}
+.sort-cell:hover{
+  cursor: pointer;
   background-color: rgb(255, 102, 0);
 }

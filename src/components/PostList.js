@@ -40,11 +40,13 @@ const handleShares = ()=>{
 }
   return (
     <div className="posts-list">
+        
         <div className="sort-wrapper">
             <div className="sort-cell" onClick={handleDate}>Date</div>
             <div className="sort-cell" onClick={handleLike}>Likes</div>
             <div className="sort-cell" onClick={handleViews}>Views</div>
             <div className="sort-cell" onClick={handleShares}>Shares</div>
+            <div className="page sort-cell">{page}</div>
         </div>
       {sortedPosts.map((post, index) => (
         <Post post={post} page={page} key={`${index} - ${post.id}`} />

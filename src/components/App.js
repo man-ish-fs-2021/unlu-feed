@@ -1,18 +1,26 @@
 import { useEffect, useState } from "react";
-import { PostList, Navbar } from "./index";
+import { PostList, Navbar,Loading } from "./index";
 
 const useFetch = (url) => {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
   useEffect(() => {
+   try{
     async function fetchData() {
       const response = await fetch(url);
+      if (response.status >= 400 && response.status < 600) {
+        throw new Error("Bad response from server");
+      }
       const data = await response.json();
+      
       console.log("Data", data);
       setData(data);
       setLoading(false);
     }
     fetchData();
+   }catch(error){
+     console.log(error);
+   }
   }, [url]);
   return { data, loading };
 };
@@ -27,8 +35,8 @@ const App = () => {
   return (
     <div className="App">
       <Navbar />
-      {loading ? <div>Loading</div> : <PostList {...data} />}
-      <div className="pagination">
+      {loading ? (<Loading/>) :(<div> {(data && data.posts.length!==0)?<PostList {...data} />:<p>No posts found</p>} </div> )}
+      {loading?null:<div className="pagination">
         <div className="pagination-container">
           <div
             className="pagination-cell"
@@ -55,7 +63,7 @@ const App = () => {
             3
           </div>
         </div>
-      </div>
+      </div>}
     </div>
   );
 };

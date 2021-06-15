@@ -166,3 +166,23 @@ code {
   cursor: pointer;
   background-color: rgb(255, 102, 0);
 }
+/* page */
+.page{
+  color: white;
+}
+/* loading screen */
+.loading-screen{
+  position: relative;
+  width:250px;
+  top: 250px;
+  left: 550px;
+  text-align: center;
+}
+.loading-screen img{
+  width: 100%;
+  animation: rotate 1s ease-in-out; 
+}
+@keyframes rotate {
+  0%{transform: rotate(0deg);}
+  100%{transform: rotate(360deg);}
+}
